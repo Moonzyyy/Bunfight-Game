@@ -1,28 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerStats : MonoBehaviour
+namespace Player
 {
-    public int lives = 3;
-    public int score;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    using UnityEngine;
 
-    // Update is called once per frame
-    void Update()
+    public class PlayerStats : MonoBehaviour
     {
-        if (lives <= 0)
+        public int lives = 3;
+        public int score;
+        GameManager _gameManager;
+
+        private void Start()
         {
-            GameOver();
+            _gameManager = FindObjectOfType<GameManager>();
+        }
+
+        public void LoseLife(int livesToLose)
+        {
+            lives -= livesToLose;
+            Debug.Log("Lives: " + lives);
+            if (lives <= 0)
+            {
+                GameOver();
+            }
+        }
+
+        public void AddScore(int scoreToAdd)
+        {
+            if (_gameManager.hasGameFinished) return;
+            score += scoreToAdd;
+            Debug.Log("Score: " + score);
+        }
+
+        void GameOver()
+        {
+            _gameManager.hasGameFinished = true;
         }
     }
 
-    void GameOver()
-    {
-        
-    }
 }

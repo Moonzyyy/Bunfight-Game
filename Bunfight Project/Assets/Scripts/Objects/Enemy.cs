@@ -1,27 +1,23 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField, Range(1f, 10f)] private int livesToRemove = 1;
+    
+    PlayerStats _playerStats;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        _playerStats = FindObjectOfType<PlayerStats>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            
+            _playerStats.LoseLife(livesToRemove);
+            Destroy(gameObject);
         }
     }
 }

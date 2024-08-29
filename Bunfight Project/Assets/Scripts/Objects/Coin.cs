@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
+using Player;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int scoreToAdd = 1;
+    PlayerStats _playerStats;
+
+    private void Start()
     {
-        
+        _playerStats = FindObjectOfType<PlayerStats>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            _playerStats.AddScore(scoreToAdd);
+            Destroy(gameObject);
+        }
     }
 }

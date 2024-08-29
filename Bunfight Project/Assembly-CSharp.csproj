@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/GameManager/GameManager.cs" />
+     <Compile Include="Assets/Scripts/World/WorldRow.cs" />
      <Compile Include="Assets/Scripts/Objects/Enemy.cs" />
      <Compile Include="Assets/Scripts/Player/PlayerStats.cs" />
      <Compile Include="Assets/Scripts/World/WorldCanvas.cs" />
@@ -62,6 +63,7 @@
      <Folder Include="Assets/Scenes" />
      <Folder Include="Assets/Prefabs" />
      <Folder Include="Assets/Scripts" />
+     <Folder Include="Assets/InputAction" />
      <Reference Include="UnityEngine">
      <HintPath>/Applications/Unity/Hub/Editor/2022.3.9f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
