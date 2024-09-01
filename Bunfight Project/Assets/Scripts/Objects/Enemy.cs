@@ -5,18 +5,25 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField, Range(1f, 10f)] private int livesToRemove = 1;
     
-    PlayerStats _playerStats;
+    PlayerStats playerStats;
+    
+    GameManager.GameManager gameManager;
 
     private void Start()
     {
-        _playerStats = FindObjectOfType<PlayerStats>();
+        playerStats = FindObjectOfType<PlayerStats>();
+        gameManager = FindObjectOfType<GameManager.GameManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (gameManager.hasGameFinished)
+        {
+            return;
+        }
         if (other.CompareTag("Player"))
         {
-            _playerStats.LoseLife(livesToRemove);
+            playerStats.LoseLife(livesToRemove);
             Destroy(gameObject);
         }
     }
