@@ -175,9 +175,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMoveWorld: 1
   canSpawnWorldRow: 1
-  worldMoveSpeed: -5
+  worldMoveSpeed: -10
   worldRowPrefab: {fileID: 99129777935036341, guid: 5db6f02819a0a49d2b6f9f4dac782fb5, type: 3}
   worldRowSpawnPosition: {x: 14, y: 0, z: 0}
+  worldRowSpawnTime: 2
+  gameStartTime: 2
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +261,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0.17243184, b: 0.4433962, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -571,6 +573,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceAmount: 8
+  playerMaximumY: 6.00841
+  playerMinimumY: -5.203222
 --- !u!114 &1156026005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99bb0d9d3a4624da5bf4a082e0a7f35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 3
+  lives: 1
   score: 0
 --- !u!1 &1206872632
 GameObject:
@@ -716,6 +720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasGameFinished: 0
+  resetTime: 3
+  destroyObjectsWhenGameEnd: 0
 --- !u!1 &1370279856
 GameObject:
   m_ObjectHideFlags: 0

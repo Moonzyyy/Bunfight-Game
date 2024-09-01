@@ -6,11 +6,11 @@ namespace Player
     {
         public int lives = 3;
         public int score;
-        GameManager _gameManager;
+        GameManager.GameManager gameManager;
 
         private void Start()
         {
-            _gameManager = FindObjectOfType<GameManager>();
+            gameManager = FindObjectOfType<GameManager.GameManager>();
         }
 
         public void LoseLife(int livesToLose)
@@ -25,14 +25,14 @@ namespace Player
 
         public void AddScore(int scoreToAdd)
         {
-            if (_gameManager.hasGameFinished) return;
+            if (gameManager.hasGameFinished) return;
             score += scoreToAdd;
             Debug.Log("Score: " + score);
         }
 
-        void GameOver()
+        public void GameOver()
         {
-            _gameManager.hasGameFinished = true;
+            gameManager.hasGameFinished = true;
         }
     }
 
