@@ -178,7 +178,7 @@ MonoBehaviour:
   worldMoveSpeed: -10
   worldRowPrefab: {fileID: 99129777935036341, guid: 5db6f02819a0a49d2b6f9f4dac782fb5, type: 3}
   worldRowSpawnPosition: {x: 14, y: 0, z: 0}
-  worldRowSpawnTime: 2
+  worldRowSpawnTime: 1
   gameStartTime: 2
 --- !u!1 &519420028
 GameObject:
