@@ -21,8 +21,13 @@ namespace GameManager
 
             if (Input.GetKey(KeyCode.R))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                ResetGame();
             }
+        }
+
+        public static void ResetGame()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         IEnumerator GameFinished()
