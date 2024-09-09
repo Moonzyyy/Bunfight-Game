@@ -17,8 +17,8 @@ namespace World
 
         [SerializeField, Range(1, 10)] private float destroyTime = 10;
 
-        private float minYSpawn = -5f;
-        float maxYSpawn = 5f;
+        private float _minYSpawn = -5f;
+        float _maxYSpawn = 5f;
         
         PlayerStats _playerStats;
         
@@ -39,7 +39,7 @@ namespace World
         {
             foreach (GameObject spawnPoint in spawnPoints)
             {
-                float spawnPointY = Random.Range(minYSpawn, maxYSpawn);
+                float spawnPointY = Random.Range(_minYSpawn, _maxYSpawn);
                 spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPointY, 
                     spawnPoint.transform.position.z);
             }
@@ -69,7 +69,7 @@ namespace World
             yield return new WaitForSecondsRealtime(destroyTime);
             if (remainingCoins.Count > 0 && !_gameManager.hasGameFinished)
             {
-                _playerStats.score -= remainingCoins.Count;
+                _playerStats.RemoveScore(remainingCoins.Count);
             }
             Destroy(gameObject);
         }

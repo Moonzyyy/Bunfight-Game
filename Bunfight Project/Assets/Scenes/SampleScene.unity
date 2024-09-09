@@ -707,6 +707,7 @@ MonoBehaviour:
   forceAmount: 8
   playerMaximumY: 6.00841
   playerMinimumY: -5.203222
+  jumpSound: {fileID: 8300000, guid: b07180920f8f20f429510d7038719c40, type: 3}
 --- !u!114 &1156026005
 MonoBehaviour:
   m_ObjectHideFlags: 0

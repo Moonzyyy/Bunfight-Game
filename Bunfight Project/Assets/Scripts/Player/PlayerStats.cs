@@ -6,11 +6,11 @@ namespace Player
     {
         public int lives = 3;
         public int score;
-        GameManager.GameManager gameManager;
+        GameManager.GameManager _gameManager;
 
         private void Start()
         {
-            gameManager = FindObjectOfType<GameManager.GameManager>();
+            _gameManager = FindObjectOfType<GameManager.GameManager>();
         }
 
         public void LoseLife(int livesToLose)
@@ -25,14 +25,21 @@ namespace Player
 
         public void AddScore(int scoreToAdd)
         {
-            if (gameManager.hasGameFinished) return;
+            if (_gameManager.hasGameFinished) return;
             score += scoreToAdd;
             Debug.Log("Score: " + score);
         }
 
+        public void RemoveScore(int scoreToRemove)
+        {
+            var newScore = score - scoreToRemove;
+            if (newScore <= 0) return;
+            score = newScore;
+        }
+
         public void GameOver()
         {
-            gameManager.hasGameFinished = true;
+            _gameManager.hasGameFinished = true;
         }
     }
 

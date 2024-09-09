@@ -1,4 +1,3 @@
-using System;
 using Player;
 using UnityEngine;
 using World;
@@ -6,27 +5,27 @@ using World;
 public class Coin : MonoBehaviour
 {
     [SerializeField] int scoreToAdd = 1;
-    PlayerStats playerStats;
-    GameManager.GameManager gameManager;
+    PlayerStats _playerStats;
+    GameManager.GameManager _gameManager;
     WorldRow _worldRow;
 
 
     private void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
-        gameManager = FindObjectOfType<GameManager.GameManager>();
+        _playerStats = FindObjectOfType<PlayerStats>();
+        _gameManager = FindObjectOfType<GameManager.GameManager>();
         _worldRow = GetComponentInParent<WorldRow>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (gameManager.hasGameFinished)
+        if (_gameManager.hasGameFinished)
         {
             return;
         }
         if (other.CompareTag("Player"))
         {
-            playerStats.AddScore(scoreToAdd);
+            _playerStats.AddScore(scoreToAdd);
             _worldRow.remainingCoins.Remove(gameObject);
             Destroy(gameObject);
         }

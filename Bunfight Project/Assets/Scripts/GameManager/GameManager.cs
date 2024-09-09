@@ -8,13 +8,13 @@ namespace GameManager
     public class GameManager : MonoBehaviour
     {
         public bool hasGameFinished;
-        private bool beginGameEnd;
+        private bool _beginGameEnd;
         [SerializeField, Range(0.1f, 10f)] private float resetTime = 3f;
         public bool destroyObjectsWhenGameEnd;
 
         private void Update()
         {
-            if (hasGameFinished && !beginGameEnd)
+            if (hasGameFinished && !_beginGameEnd)
             {
                 StartCoroutine(GameFinished());
             }
