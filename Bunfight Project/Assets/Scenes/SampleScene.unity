@@ -307,10 +307,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canMoveWorld: 1
   canSpawnWorldRow: 1
-  worldMoveSpeed: -10
+  worldMoveSpeed: -15
   worldRowPrefab: {fileID: 99129777935036341, guid: 5db6f02819a0a49d2b6f9f4dac782fb5, type: 3}
   worldRowSpawnPosition: {x: 18, y: 0, z: 0}
-  worldRowSpawnTime: 2
+  worldRowSpawnTime: 1
   gameStartTime: 3
 --- !u!1 &519420028
 GameObject:
@@ -546,6 +546,7 @@ GameObject:
   - component: {fileID: 1156026004}
   - component: {fileID: 1156026005}
   - component: {fileID: 1156026006}
+  - component: {fileID: 1156026007}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -708,6 +709,7 @@ MonoBehaviour:
   playerMaximumY: 6.00841
   playerMinimumY: -5.203222
   jumpSound: {fileID: 8300000, guid: b07180920f8f20f429510d7038719c40, type: 3}
+  useOldMovement: 0
 --- !u!114 &1156026005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,7 +723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Actions: {fileID: -944628639613478452, guid: 0253120522bf94944aa86a32ff3d8da6, type: 3}
-  m_NotificationBehavior: 2
+  m_NotificationBehavior: 0
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
     m_PersistentCalls:
@@ -789,6 +791,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: cf5b3a0d-c4bf-465a-bc63-3bf21730784d
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6be4b143-7eec-4f50-8935-4791cb991ffe
+    m_ActionName: Player/TouchPosition[/Simulated Touchscreen/position,/Mouse/position]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -808,6 +814,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 1
   score: 0
+--- !u!114 &1156026007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1156025999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f28add0bedc351a4d8084d0a140abcb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1206872632
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,5 @@
+using System;
+
 namespace GameManager
 {
     using UnityEngine;
@@ -5,13 +7,8 @@ namespace GameManager
 
     public class TouchManager : MonoBehaviour
     {
-        PlayerInput _playerInput;
-        private InputAction _touchPosAction;
 
-        private void Awake()
-        {
-            _playerInput = GetComponent<PlayerInput>();
-        }
+
     }
 
 }
