@@ -33,7 +33,7 @@ namespace Player
         
         public void OnDisable()
         {
-            // _touchPosAction.performed -= TouchPressed;
+             _touchPosAction.performed -= TouchPressed;
         }
 
         // Start is called before the first frame update

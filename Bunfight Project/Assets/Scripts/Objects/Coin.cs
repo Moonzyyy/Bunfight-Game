@@ -8,6 +8,8 @@ public class Coin : MonoBehaviour
     PlayerStats _playerStats;
     GameManager.GameManager _gameManager;
     WorldRow _worldRow;
+    [SerializeField] private bool isGoldCoin;
+    [SerializeField] AudioClip coinCollectSound;
 
 
     private void Start()
@@ -25,8 +27,10 @@ public class Coin : MonoBehaviour
         }
         if (other.CompareTag("Player"))
         {
+            AudioSource.PlayClipAtPoint(coinCollectSound, transform.position);
             _playerStats.AddScore(scoreToAdd);
-            _worldRow.remainingCoins.Remove(gameObject);
+            if (!isGoldCoin) _worldRow.remainingCoins.Remove(gameObject);
+            else if (isGoldCoin) _worldRow.remainingGoldCoins.Remove(gameObject);
             Destroy(gameObject);
         }
     }

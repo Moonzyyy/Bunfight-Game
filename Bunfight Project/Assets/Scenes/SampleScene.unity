@@ -309,7 +309,7 @@ MonoBehaviour:
   canSpawnWorldRow: 1
   worldMoveSpeed: -15
   worldRowPrefab: {fileID: 99129777935036341, guid: 5db6f02819a0a49d2b6f9f4dac782fb5, type: 3}
-  worldRowSpawnPosition: {x: 18, y: 0, z: 0}
+  worldRowSpawnPosition: {x: 24, y: 0, z: 0}
   worldRowSpawnTime: 1
   gameStartTime: 3
 --- !u!1 &519420028
@@ -1301,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120956806233161661, guid: 5db6f02819a0a49d2b6f9f4dac782fb5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 7120956806233161661, guid: 5db6f02819a0a49d2b6f9f4dac782fb5, type: 3}
       propertyPath: m_LocalPosition.y

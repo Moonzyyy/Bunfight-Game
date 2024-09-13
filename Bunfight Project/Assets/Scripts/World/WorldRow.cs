@@ -13,7 +13,7 @@ namespace World
         [SerializeField] private GameObject[] spawnPoints;
 
         [SerializeField] private GameObject enemies;
-        [SerializeField] private GameObject coins;
+        [SerializeField] private GameObject[] coins;
 
         [SerializeField, Range(1, 10)] private float destroyTime = 10;
 
@@ -23,8 +23,12 @@ namespace World
         PlayerStats _playerStats;
         
         [FormerlySerializedAs("_remainingCoins")] public List<GameObject>remainingCoins;
+        public List<GameObject> remainingGoldCoins;
         
         GameManager.GameManager _gameManager;
+
+        [SerializeField, Range(1, 10)] private int maxGoldCoinNumber = 10;
+        [SerializeField, Range(1, 10)] private int goldCoinRemoveAmount = 10;
 
         private void Start()
         {
@@ -57,11 +61,27 @@ namespace World
                 }
                 else
                 {
-                    GameObject newCoin = Instantiate(coins, spawnPoints[i].transform.position, Quaternion.identity);
+                    int newCoinNumber = CoinToSpawn();
+                    GameObject newCoin = Instantiate(coins[newCoinNumber], spawnPoints[i].transform.position, Quaternion.identity);
                     newCoin.transform.parent = spawnPoints[i].transform;
-                    remainingCoins.Add(newCoin);
+                    if (newCoinNumber == 0) remainingCoins.Add(newCoin);
+                    else if (newCoinNumber == 1) remainingGoldCoins.Add(newCoin);
                 }
             }
+        }
+
+        int CoinToSpawn()
+        {
+            var coinNumber = Random.Range(0, maxGoldCoinNumber + 1);
+            if (coinNumber == 5)
+            {
+                coinNumber = 1;
+            }
+            else
+            {
+                coinNumber = 0;
+            }
+            return coinNumber;
         }
 
         IEnumerator DestroyRow()
@@ -70,6 +90,11 @@ namespace World
             if (remainingCoins.Count > 0 && !_gameManager.hasGameFinished)
             {
                 _playerStats.RemoveScore(remainingCoins.Count);
+            }
+
+            if (remainingGoldCoins.Count > 0 && !_gameManager.hasGameFinished)
+            {
+                _playerStats.RemoveScore(remainingGoldCoins.Count * goldCoinRemoveAmount);
             }
             Destroy(gameObject);
         }
