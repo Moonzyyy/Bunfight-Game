@@ -55,8 +55,13 @@ MonoBehaviour:
   coins:
   - {fileID: 335855235145219345, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
   - {fileID: 2086366733817020634, guid: 2f48b8fc813f64adb8e2f32bffba782c, type: 3}
-  destroyTime: 2.8
+  destroyTime: 2
+  minYSpawn: -2.1
+  maxYSpawn: 5
   remainingCoins: []
+  remainingGoldCoins: []
+  maxGoldCoinNumber: 10
+  goldCoinRemoveAmount: 10
 --- !u!1 &1028112234340909123
 GameObject:
   m_ObjectHideFlags: 0

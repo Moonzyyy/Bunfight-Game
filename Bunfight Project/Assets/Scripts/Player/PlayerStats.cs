@@ -7,10 +7,12 @@ namespace Player
         public int lives = 3;
         public int score;
         GameManager.GameManager _gameManager;
+        private Rigidbody2D _rigidbody2D;
 
         private void Start()
         {
             _gameManager = FindObjectOfType<GameManager.GameManager>();
+            _rigidbody2D = GetComponent<Rigidbody2D>();
         }
 
         public void LoseLife(int livesToLose)
@@ -39,6 +41,7 @@ namespace Player
 
         public void GameOver()
         {
+            if (_rigidbody2D.gravityScale == 0) _rigidbody2D.gravityScale = 1;   
             _gameManager.hasGameFinished = true;
         }
     }

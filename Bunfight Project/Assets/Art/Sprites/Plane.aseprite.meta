@@ -77,6 +77,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -89,6 +90,7 @@ ScriptedImporter:
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
     spritePadding: 0
     generateModelPrefab: 1
     generateAnimationClips: 1
@@ -121,15 +123,15 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Plane
     originalName: 
-    pivot: {x: 0.5, y: -0.8333334}
+    pivot: {x: 0.5, y: -0.71428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 12
+      width: 34
+      height: 14
     spriteID: b513bfb5cd69a4e12add104aeddc5fd3
     spriteBone: []
     spriteOutline: []
@@ -150,15 +152,17 @@ ScriptedImporter:
     cells:
     - name: Plane
       frameIndex: 0
+      additiveSortOrder: 0
       cellRect:
         x: 0
         y: 10
-        width: 32
-        height: 12
+        width: 34
+        height: 14
       spriteId: b513bfb5cd69a4e12add104aeddc5fd3
     linkedCells: []
     parentIndex: -1
   platformSettings: []
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 32, y: 32}
+  canvasSize: {x: 34, y: 34}

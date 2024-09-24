@@ -29,6 +29,7 @@ public class Coin : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(coinCollectSound, transform.position);
             _playerStats.AddScore(scoreToAdd);
+            _gameManager.AddSpeedScore(scoreToAdd);
             if (!isGoldCoin) _worldRow.remainingCoins.Remove(gameObject);
             else if (isGoldCoin) _worldRow.remainingGoldCoins.Remove(gameObject);
             Destroy(gameObject);

@@ -17,8 +17,8 @@ namespace World
 
         [SerializeField, Range(1, 10)] private float destroyTime = 10;
 
-        private float _minYSpawn = -5f;
-        float _maxYSpawn = 5f;
+        [FormerlySerializedAs("_minYSpawn"), Range(0, -5)] [SerializeField] float minYSpawn = -5f;
+        [FormerlySerializedAs("_maxYSpawn"), Range(0, 5)] [SerializeField] float maxYSpawn = 5f;
         
         PlayerStats _playerStats;
         
@@ -30,10 +30,13 @@ namespace World
         [SerializeField, Range(1, 10)] private int maxGoldCoinNumber = 10;
         [SerializeField, Range(1, 10)] private int goldCoinRemoveAmount = 10;
 
+        private int _maxGameLevelForIntro;
+
         private void Start()
         {
             _playerStats = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>();
             _gameManager = FindObjectOfType<GameManager.GameManager>();
+            _maxGameLevelForIntro = _gameManager.maxLevel / 2;
             ChangeSpawnPointPosition();
             SpawnObjects();
             StartCoroutine(DestroyRow());
@@ -43,7 +46,7 @@ namespace World
         {
             foreach (GameObject spawnPoint in spawnPoints)
             {
-                float spawnPointY = Random.Range(_minYSpawn, _maxYSpawn);
+                float spawnPointY = Random.Range(minYSpawn, maxYSpawn);
                 spawnPoint.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPointY, 
                     spawnPoint.transform.position.z);
             }
@@ -51,7 +54,12 @@ namespace World
 
         private void SpawnObjects()
         {
-            int enemySpawn = Random.Range(0, spawnPoints.Length);
+            var enemySpawn = Random.Range(0, spawnPoints.Length);
+            SpawnRow1(enemySpawn);
+        }
+
+        private void SpawnRow1(int enemySpawn)
+        {
             for (int i = 0; i < spawnPoints.Length; i++)
             {
                 if (i == enemySpawn)
@@ -62,10 +70,31 @@ namespace World
                 else
                 {
                     int newCoinNumber = CoinToSpawn();
+                    GameObject newCoin = Instantiate(coins[newCoinNumber],
+                        spawnPoints[i].transform.position, Quaternion.identity);
+                    newCoin.transform.parent = spawnPoints[i].transform;
+                    if (newCoinNumber == 0) remainingCoins.Add(newCoin);
+                    else if (newCoinNumber == 1) remainingGoldCoins.Add(newCoin);
+                }
+            }
+        }
+        
+        private void SpawnRow2(int enemySpawn)
+        {
+            for (int i = 0; i < spawnPoints.Length; i++)
+            {
+                if (i == enemySpawn)
+                {
+                    int newCoinNumber = CoinToSpawn();
                     GameObject newCoin = Instantiate(coins[newCoinNumber], spawnPoints[i].transform.position, Quaternion.identity);
                     newCoin.transform.parent = spawnPoints[i].transform;
                     if (newCoinNumber == 0) remainingCoins.Add(newCoin);
                     else if (newCoinNumber == 1) remainingGoldCoins.Add(newCoin);
+                }
+                else
+                {
+                    GameObject newEnemy = Instantiate(enemies, spawnPoints[i].transform.position, Quaternion.identity);
+                    newEnemy.transform.parent = spawnPoints[i].transform;
                 }
             }
         }

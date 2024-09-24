@@ -77,26 +77,12 @@ namespace Player
             {
                 return;
             }
-            Vector2 touchPosition = _playerCamera.ScreenToWorldPoint(ctx.ReadValue<Vector2>());
-            transform.position = new Vector3(transform.position.x, touchPosition.y, transform.position.z);
-        }
-
-        public void OnJump(InputAction.CallbackContext context)
-        {
             if (_gameManager.hasGameFinished)
             {
                 return;
             }
-            if (!context.performed)
-            {
-                return;
-            }
-            _rb2d.AddForce(transform.up * forceAmount, ForceMode2D.Impulse);
-            if (Camera.main == null)
-            {
-                return;
-            }
-            AudioSource.PlayClipAtPoint(jumpSound, Camera.main.transform.position);
+            Vector2 touchPosition = _playerCamera.ScreenToWorldPoint(ctx.ReadValue<Vector2>());
+            transform.position = new Vector3(transform.position.x, touchPosition.y, transform.position.z);
         }
 
         IEnumerator DestroyPlayer()
