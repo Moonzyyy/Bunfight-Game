@@ -1,5 +1,6 @@
 using Player;
 using TMPro;
+using UnityEngine.UI;
 
 namespace GameManager
 {
@@ -12,6 +13,7 @@ namespace GameManager
         
         public UnityEvent<string, int> submitScoreEvent;
         [SerializeField] private TMP_InputField nameField;
+        [SerializeField] Button submitButton;
         // Start is called before the first frame update
         void Start()
         {
@@ -24,6 +26,7 @@ namespace GameManager
             if (nameField.text.Length == 0) return;
             submitScoreEvent.Invoke(nameField.text, _score);
             nameField.text = "";
+            submitButton.interactable = false;
         }
     }
 

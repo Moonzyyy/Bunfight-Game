@@ -10,11 +10,14 @@ namespace GameManager
         [SerializeField] List<TextMeshProUGUI> names;
         [SerializeField] List<TextMeshProUGUI> score;
 
-        private string _publicLeaderboardKey = "1d7196b222715798082f821de191d1b99b7646a16d03fdc8ba858b5ff496d010";
+        private string _publicLeaderboardKey = "8bb54f1b56c597eb04b269e7e74c6c8a928a0acc05dac5e222e63235ac1e122d";
+
+        private string _privateLeaderboardKey =
+            "38ed50a2a3e395f29a292c9a8b4d208189314e8f856a7873b809d40ff4f55597a495cfa9d121d8111503595c015d21ac585dba5b3ae176b5ad3d3c3433bddad2b9db17b03c66736004476d2097fa1b31b7c7305552b1844732dec3554f39fb68b317c336245c0948bdec3865737c89bdb17e27fcf41f08b0754619641874489c";
 
         private bool _canUploadEntry = true;
 
-        private void Start()
+        private void OnEnable()
         {
             GetLeaderboard();
         }
@@ -37,8 +40,8 @@ namespace GameManager
             if (!_canUploadEntry) return;
             LeaderboardCreator.UploadNewEntry(_publicLeaderboardKey, username, userScore, ((msg) =>
             {
+                LeaderboardCreator.ResetPlayer();
                 GetLeaderboard();
-                _canUploadEntry = false;
             }));   
         }
     }

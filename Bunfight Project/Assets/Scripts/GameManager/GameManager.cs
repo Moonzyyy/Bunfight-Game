@@ -95,8 +95,6 @@ namespace GameManager
             _hud.DisableScoreText();
             gameOverObject.gameObject.SetActive(true);
             leaderboard.SetActive(true);
-            LeaderboardManager leaderboardManager = leaderboard.GetComponent<LeaderboardManager>();
-            leaderboardManager.GetLeaderboard();
         }
 
         private void DestroyRemainingObjects()
