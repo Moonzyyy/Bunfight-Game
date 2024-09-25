@@ -52,7 +52,16 @@ MonoBehaviour:
   - {fileID: 5338983782134545903}
   - {fileID: 3048567558043790505}
   enemies: {fileID: 4686272664381881621, guid: 8525d60a06b174d72bc30c285c77300d, type: 3}
-  coins: {fileID: 335855235145219345, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+  coins:
+  - {fileID: 335855235145219345, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+  - {fileID: 2086366733817020634, guid: 2f48b8fc813f64adb8e2f32bffba782c, type: 3}
+  destroyTime: 2
+  minYSpawn: -2.1
+  maxYSpawn: 5
+  remainingCoins: []
+  remainingGoldCoins: []
+  maxGoldCoinNumber: 10
+  goldCoinRemoveAmount: 10
 --- !u!1 &1028112234340909123
 GameObject:
   m_ObjectHideFlags: 0
@@ -78,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 1028112234340909123}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.5, z: 0}
+  m_LocalPosition: {x: -5, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -109,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 3048567558043790505}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: 5, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

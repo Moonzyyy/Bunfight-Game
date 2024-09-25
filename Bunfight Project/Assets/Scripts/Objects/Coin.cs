@@ -1,28 +1,37 @@
 using Player;
 using UnityEngine;
+using World;
 
 public class Coin : MonoBehaviour
 {
     [SerializeField] int scoreToAdd = 1;
-    PlayerStats playerStats;
-    GameManager.GameManager gameManager;
+    PlayerStats _playerStats;
+    GameManager.GameManager _gameManager;
+    WorldRow _worldRow;
+    [SerializeField] private bool isGoldCoin;
+    [SerializeField] AudioClip coinCollectSound;
 
 
     private void Start()
     {
-        playerStats = FindObjectOfType<PlayerStats>();
-        gameManager = FindObjectOfType<GameManager.GameManager>();
+        _playerStats = FindObjectOfType<PlayerStats>();
+        _gameManager = FindObjectOfType<GameManager.GameManager>();
+        _worldRow = GetComponentInParent<WorldRow>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (gameManager.hasGameFinished)
+        if (_gameManager.hasGameFinished)
         {
             return;
         }
         if (other.CompareTag("Player"))
         {
-            playerStats.AddScore(scoreToAdd);
+            AudioSource.PlayClipAtPoint(coinCollectSound, transform.position);
+            _playerStats.AddScore(scoreToAdd);
+            _gameManager.AddSpeedScore(scoreToAdd);
+            if (!isGoldCoin) _worldRow.remainingCoins.Remove(gameObject);
+            else if (isGoldCoin) _worldRow.remainingGoldCoins.Remove(gameObject);
             Destroy(gameObject);
         }
     }

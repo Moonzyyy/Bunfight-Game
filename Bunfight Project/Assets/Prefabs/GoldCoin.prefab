@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1755684718681144779
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 335855235145219345, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Name
+      value: GoldCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035764728322559997, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035764728322559997, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035764728322559997, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035764728322559997, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Size.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Size.y
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f6d5dac42e456435f946197186dfbe36, type: 3}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615398542770661920, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6138233649463396582, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557259843846163695, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: isGoldCoin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557259843846163695, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: scoreToAdd
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557259843846163695, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}
+      propertyPath: coinCollectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3ef13b38d1c5f49cca5039a3a5410584, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a43d315ae720945c9a7c7dfb72c4c6b7, type: 3}

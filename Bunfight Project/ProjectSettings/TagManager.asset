@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - WorldObject
+  - Coin
+  - KillZone
   layers:
   - Default
   - TransparentFX
@@ -12,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Game
   - 
   - 
   - 
@@ -41,4 +43,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: GameWorld
+    uniqueID: 3487313697
     locked: 0
